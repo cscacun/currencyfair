@@ -1,106 +1,108 @@
 package com.currencyfair.rest.trademessages.dto;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.joda.time.DateTime;
-
+import java.math.BigDecimal;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
+import org.hibernate.validator.constraints.NotBlank;
+import org.joda.time.DateTime;
 
 /**
  * Created by scacun on 4/25/15.
  */
 public class TradeMessageDTO {
 
-    @NotBlank
-    private String userId;
+  private static final long MIN_AMOUNT = 0;
+  private static final long MIN_RATE = 0;
 
-    @NotNull
-    private RestCurrencyType currencyFrom;
+  @NotBlank
+  private String userId;
 
-    @NotNull
-    private RestCurrencyType currencyTo;
+  @NotNull
+  private RestCurrencyType currencyFrom;
 
-    @Min(0)
-    @NotNull
-    private BigDecimal amountSell;
+  @NotNull
+  private RestCurrencyType currencyTo;
 
-    @Min(0)
-    @NotNull
-    private BigDecimal amountBuy;
+  @Min(MIN_AMOUNT)
+  @NotNull
+  private BigDecimal amountSell;
 
-    @Min(0)
-    @NotNull
-    private BigDecimal rate;
+  @Min(MIN_AMOUNT)
+  @NotNull
+  private BigDecimal amountBuy;
 
-    @NotNull
-    private DateTime timePlaced;
+  @Min(MIN_RATE)
+  @NotNull
+  private BigDecimal rate;
 
-    @NotNull
-    private RestCountry originatingCountry;
+  @NotNull
+  private DateTime timePlaced;
 
-    public String getUserId() {
-        return userId;
-    }
+  @NotNull
+  private RestCountry originatingCountry;
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+  public String getUserId() {
+    return userId;
+  }
 
-    public RestCurrencyType getCurrencyFrom() {
-        return currencyFrom;
-    }
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
 
-    public void setCurrencyFrom(RestCurrencyType currencyFrom) {
-        this.currencyFrom = currencyFrom;
-    }
+  public RestCurrencyType getCurrencyFrom() {
+    return currencyFrom;
+  }
 
-    public RestCurrencyType getCurrencyTo() {
-        return currencyTo;
-    }
+  public void setCurrencyFrom(RestCurrencyType currencyFrom) {
+    this.currencyFrom = currencyFrom;
+  }
 
-    public void setCurrencyTo(RestCurrencyType currencyTo) {
-        this.currencyTo = currencyTo;
-    }
+  public RestCurrencyType getCurrencyTo() {
+    return currencyTo;
+  }
 
-    public BigDecimal getAmountSell() {
-        return amountSell;
-    }
+  public void setCurrencyTo(RestCurrencyType currencyTo) {
+    this.currencyTo = currencyTo;
+  }
 
-    public void setAmountSell(BigDecimal amountSell) {
-        this.amountSell = amountSell;
-    }
+  public BigDecimal getAmountSell() {
+    return amountSell;
+  }
 
-    public BigDecimal getAmountBuy() {
-        return amountBuy;
-    }
+  public void setAmountSell(BigDecimal amountSell) {
+    this.amountSell = amountSell;
+  }
 
-    public void setAmountBuy(BigDecimal amountBuy) {
-        this.amountBuy = amountBuy;
-    }
+  public BigDecimal getAmountBuy() {
+    return amountBuy;
+  }
 
-    public BigDecimal getRate() {
-        return rate;
-    }
+  public void setAmountBuy(BigDecimal amountBuy) {
+    this.amountBuy = amountBuy;
+  }
 
-    public void setRate(BigDecimal rate) {
-        this.rate = rate;
-    }
+  public BigDecimal getRate() {
+    return rate;
+  }
 
-    public DateTime getTimePlaced() {
-        return timePlaced;
-    }
+  public void setRate(BigDecimal rate) {
+    this.rate = rate;
+  }
 
-    public void setTimePlaced(DateTime timePlaced) {
-        this.timePlaced = timePlaced;
-    }
+  public DateTime getTimePlaced() {
+    return timePlaced;
+  }
 
-    public RestCountry getOriginatingCountry() {
-        return originatingCountry;
-    }
+  public void setTimePlaced(DateTime timePlaced) {
+    this.timePlaced = timePlaced;
+  }
 
-    public void setOriginatingCountry(RestCountry originatingCountry) {
-        this.originatingCountry = originatingCountry;
-    }
+  public RestCountry getOriginatingCountry() {
+    return originatingCountry;
+  }
+
+  public void setOriginatingCountry(RestCountry originatingCountry) {
+    this.originatingCountry = originatingCountry;
+  }
 
 }

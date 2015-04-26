@@ -8,26 +8,26 @@ import com.fasterxml.jackson.annotation.JsonCreator;
  */
 public enum RestCurrencyType {
 
-    GBP("British Pound"),
-    EUR("Euro"),
-    USD("US Dollar");
+  GBP("British Pound"),
+  EUR("Euro"),
+  USD("US Dollar");
 
-    private static final EnumNamesProvider<RestCurrencyType> ENUMS =
-            new EnumNamesProvider<>("Currencies", RestCurrencyType.class);
+  private static final EnumNamesProvider<RestCurrencyType> ENUMS =
+      new EnumNamesProvider<>("Currencies", RestCurrencyType.class);
 
-    private final String name;
+  private final String name;
 
-    private RestCurrencyType(String name) {
-        this.name = name;
-    }
+  private RestCurrencyType(String name) {
+    this.name = name;
+  }
 
-    @JsonCreator
-    public static RestCurrencyType getCurrency(String currency) {
-        return ENUMS.getByName(currency);
-    }
+  @JsonCreator
+  public static RestCurrencyType getCurrency(String currency) {
+    return ENUMS.getByName(currency);
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
 }

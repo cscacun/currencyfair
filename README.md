@@ -14,8 +14,8 @@ A POST request to the endpoint will create/store the Trade Message passed in the
 
 ```javascript
 {
-	"userId": "85886",
- 	"currencyFrom": "EUR",
+	  "userId": "85886",
+  	"currencyFrom": "EUR",
   	"currencyTo": "GBP",
   	"amountSell": 10.89,
   	"amountBuy": 747.10,
@@ -43,3 +43,8 @@ Please find examples in the Postman library collection under the `postman_librar
 
 # to run the project
 ./gradlew bootRun
+```
+
+## Debug
+
+Debug is set on port 12005

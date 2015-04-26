@@ -5,20 +5,20 @@ package com.currencyfair.rest;
  */
 public class RestErrorBody {
 
-    private final int status;
-    private final String message;
+  private final int status;
+  private final String message;
 
-    public RestErrorBody(int status, String message) {
-        this.status = status;
-        this.message = message;
-    }
+  public RestErrorBody(int status, String message) {
+    this.status = status;
+    this.message = message;
+  }
 
-    public int getStatus() {
-        return status;
-    }
+  public int getStatus() {
+    return status;
+  }
 
-    public String getMessage() {
-        return message;
-    }
+  public String getMessage() {
+    return message;
+  }
 
 }

@@ -6,28 +6,28 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 /**
  * Created by scacun on 4/25/15.
  */
-public enum  RestCountry {
+public enum RestCountry {
 
-    FR("France"),
-    UK("United Kingdom"),
-    IE("Ireland"),
-    US("USA");
+  FR("France"),
+  UK("United Kingdom"),
+  IE("Ireland"),
+  US("USA");
 
-    private static final EnumNamesProvider<RestCountry> ENUMS = new EnumNamesProvider<>("Countries", RestCountry.class);
+  private static final EnumNamesProvider<RestCountry> ENUMS = new EnumNamesProvider<>("Countries", RestCountry.class);
 
-    private final String name;
+  private final String name;
 
-    private RestCountry(String name) {
-        this.name = name;
-    }
+  private RestCountry(String name) {
+    this.name = name;
+  }
 
-    @JsonCreator
-    public static RestCountry getCountry(String country) {
-        return ENUMS.getByName(country);
-    }
+  @JsonCreator
+  public static RestCountry getCountry(String country) {
+    return ENUMS.getByName(country);
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
 }

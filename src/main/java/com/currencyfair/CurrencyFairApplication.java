@@ -22,32 +22,32 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 public class CurrencyFairApplication extends WebMvcConfigurerAdapter {
 
-    public static void main(String[] args) {
-        new SpringApplicationBuilder(CurrencyFairApplication.class)
-                .showBanner(false)
-                .run(args);
-    }
+  public static void main(String[] args) {
+    new SpringApplicationBuilder(CurrencyFairApplication.class)
+        .showBanner(false)
+        .run(args);
+  }
 
-    @Autowired
-    public void configureConverter(MappingJackson2HttpMessageConverter messageConverter) {
-        messageConverter.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
-        messageConverter.getObjectMapper().configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-        messageConverter.getObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
-        messageConverter.getObjectMapper().registerModule(getJsonDateTimeModule());
-    }
+  @Autowired
+  public void configureConverter(MappingJackson2HttpMessageConverter messageConverter) {
+    messageConverter.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
+    messageConverter.getObjectMapper().configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+    messageConverter.getObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
+    messageConverter.getObjectMapper().registerModule(getJsonDateTimeModule());
+  }
 
-    @Bean
-    public DispatcherServlet dispatcherServlet() {
-        DispatcherServlet dispatcherServlet = new DispatcherServlet();
-        dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
-        return dispatcherServlet;
-    }
+  @Bean
+  public DispatcherServlet dispatcherServlet() {
+    DispatcherServlet dispatcherServlet = new DispatcherServlet();
+    dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
+    return dispatcherServlet;
+  }
 
-    private Module getJsonDateTimeModule() {
-        SimpleModule jsonModule = new SimpleModule("JsonDateTimeModule");
-        jsonModule.addDeserializer(DateTime.class, new DateTimeDeserializer());
-        jsonModule.addSerializer(DateTime.class, new DateTimeSerializer());
-        return jsonModule;
-    }
+  private Module getJsonDateTimeModule() {
+    SimpleModule jsonModule = new SimpleModule("JsonDateTimeModule");
+    jsonModule.addDeserializer(DateTime.class, new DateTimeDeserializer());
+    jsonModule.addSerializer(DateTime.class, new DateTimeSerializer());
+    return jsonModule;
+  }
 
 }
