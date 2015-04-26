@@ -1,0 +1,45 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+jar {
+  baseName = 'currencyfair'
+  version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+  }
+}
+
+apply plugin: 'spring-boot'
+
+dependencies {
+
+  compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0")
+  compile("com.google.guava:guava:18.0")
+  compile("org.apache.commons:commons-lang3:3.0")
+  compile("org.apache.httpcomponents:httpclient:4.4")
+  compile("joda-time:joda-time:2.7")
+
+  compile("org.springframework.boot:spring-boot-starter-actuator")
+  compile("org.springframework.boot:spring-boot-starter-hateoas")
+  compile("org.springframework.boot:spring-boot-starter-web")
+
+}
+
+wrapper {
+  gradleVersion = '2.3'
+}
+
+applicationDefaultJvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=12005"]
