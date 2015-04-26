@@ -1,4 +1,4 @@
-package com.currencyfair;
+package com.currencyfair.rest;
 
 /**
  * Created by scacun on 4/25/15.

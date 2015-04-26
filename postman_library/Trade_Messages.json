@@ -1,0 +1,31 @@
+{ "id" : "775b3065-8a3c-db18-da57-d7a8d6411142",
+  "name" : "Trade Messages",
+  "requests" : [ { "collectionId" : "775b3065-8a3c-db18-da57-d7a8d6411142",
+        "data" : "{\n\t\"userId\": \"85886\", \n \t\"currencyFrom\": \"EUR\", \n  \t\"currencyTo\": \"GBP\", \n  \t\"amountSell\": 10.89, \n  \t\"amountBuy\": 747.10, \n  \t\"rate\": 0.7471, \n  \t\"timePlaced\" : \"24-JAN-15 10:27:44\", \n  \t\"originatingCountry\" : \"FR\"\n}",
+        "dataMode" : "raw",
+        "description" : "",
+        "headers" : "Content-Type: application/json\n",
+        "id" : "0acef987-24fa-8412-b5e8-be053631e355",
+        "method" : "GET",
+        "name" : "02. Get All Trade Messages",
+        "responses" : [  ],
+        "timestamp" : 0,
+        "url" : "localhost:8889/trademessages",
+        "version" : 2
+      },
+      { "collectionId" : "775b3065-8a3c-db18-da57-d7a8d6411142",
+        "data" : "{\n\t\"userId\": \"85886\", \n \t\"currencyFrom\": \"EUR\", \n  \t\"currencyTo\": \"GBP\", \n  \t\"amountSell\": 10.89, \n  \t\"amountBuy\": 747.10, \n  \t\"rate\": 0.7471, \n  \t\"timePlaced\" : \"24-JAN-15 10:27:44\", \n  \t\"originatingCountry\" : \"FR\"\n}",
+        "dataMode" : "raw",
+        "description" : "",
+        "headers" : "Content-Type: application/json\n",
+        "id" : "b14e8843-0f91-7bcb-b782-87ea95085ed4",
+        "method" : "POST",
+        "name" : "01. Create Trade Message",
+        "responses" : [  ],
+        "timestamp" : 0,
+        "url" : "localhost:8889/trademessages",
+        "version" : 2
+      }
+    ],
+  "timestamp" : 1430062018274
+}

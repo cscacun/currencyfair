@@ -1,6 +1,5 @@
 package com.currencyfair.rest;
 
-import com.currencyfair.RestInvalidRequestException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -26,6 +25,7 @@ class RestControllerAdvice {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public RestErrorBody handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         if (e.getCause() != null && e.getCause() instanceof JsonMappingException) {
+
             JsonMappingException jsonMappingException = (JsonMappingException) e.getCause();
             if (jsonMappingException.getCause() != null &&
                     jsonMappingException.getCause() instanceof RestInvalidRequestException) {

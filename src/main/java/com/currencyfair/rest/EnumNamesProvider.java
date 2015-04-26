@@ -1,5 +1,6 @@
-package com.currencyfair;
+package com.currencyfair.rest;
 
+import com.currencyfair.rest.RestInvalidRequestException;
 import com.google.common.collect.ImmutableMap;
 import org.apache.commons.lang3.StringUtils;
 

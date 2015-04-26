@@ -1,6 +1,6 @@
-package com.currencyfair.rest.dto;
+package com.currencyfair.rest.trademessages.dto;
 
-import com.currencyfair.EnumNamesProvider;
+import com.currencyfair.rest.EnumNamesProvider;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 /**

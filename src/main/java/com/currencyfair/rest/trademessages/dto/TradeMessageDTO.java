@@ -1,4 +1,4 @@
-package com.currencyfair.rest.dto;
+package com.currencyfair.rest.trademessages.dto;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.joda.time.DateTime;
@@ -22,12 +22,15 @@ public class TradeMessageDTO {
     private RestCurrencyType currencyTo;
 
     @Min(0)
+    @NotNull
     private BigDecimal amountSell;
 
     @Min(0)
+    @NotNull
     private BigDecimal amountBuy;
 
     @Min(0)
+    @NotNull
     private BigDecimal rate;
 
     @NotNull
